@@ -2,10 +2,12 @@ async function filterCounties(counties, params) {
   const querieParams = Object.keys(params);
 
   let countiesFormat = counties;
-
+  let msgErrorUf = "";
   let haveError = false;
   querieParams.map((param) => {
+    // ? if this param dont have error
     if (!haveError) {
+      // ?Check the passed query params
       switch (param) {
         case "region":
           countiesFormat = countiesFormat.filter((countie) => {
@@ -17,9 +19,16 @@ async function filterCounties(counties, params) {
           });
           break;
         case "uf":
-          countiesFormat = countiesFormat.filter(
-            (countie) => countie.uf == params.uf
-          );
+          if (params.uf.toUpperCase() !== params.uf || params.uf.length != 2) {
+            haveError = true;
+            params.uf.length != 2
+              ? (msgErrorUf = "the uf field must have only two letters")
+              : (msgErrorUf = "invalid uf field, its value must be upper case");
+          } else {
+            countiesFormat = countiesFormat.filter(
+              (countie) => countie.uf == params.uf
+            );
+          }
           break;
         case "name":
           countiesFormat = countiesFormat.filter((countie) => {
@@ -35,7 +44,14 @@ async function filterCounties(counties, params) {
       }
     }
   });
-  return countiesFormat;
+  if (haveError) {
+    return {
+      status: false,
+      msg: msgErrorUf,
+    };
+  } else {
+    return { status: true, counties: countiesFormat };
+  }
 }
 
 async function formatCounties(counties) {

@@ -1,6 +1,6 @@
 # API REST DE CIDADES BRASILEIRAS 🇧🇷
 
-Esta api serve para otmizar o as consultas realizadas a ap do próprio IBGE, simpplificando informações e  facilitando os métodos de pesquisa a mesma!
+Esta api serve para otmizar as consultas realizadas a api do próprio IBGE, simpplificando informações e  facilitando os métodos de pesquisa a mesma!
 
 Todas as configurações da api estão dentro de `/src`.
 

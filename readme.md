@@ -46,7 +46,7 @@ Ela  será a sua rota padrão que retorna todos os municípios brasileiros, supo
 
 OBS: Você deve usar a sigla em maiusculo do estado!
 
-### region:
+### name:
 `GET localhost:3000/api/city?name=Fortaleza`
 - Retorna a cidade com o determinado nome, se existir!
 

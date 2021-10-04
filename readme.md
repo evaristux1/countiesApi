@@ -1,6 +1,6 @@
 # API REST DE CIDADES BRASILEIRAS 🇧🇷
 
-Esta api serve para otmizar as consultas realizadas a api do próprio IBGE, simpplificando informações e  facilitando os métodos de pesquisa a mesma!
+Esta api serve para otmizar as consultas realizadas a api do próprio IBGE, simplificando informações e  facilitando os métodos de pesquisa a mesma!
 
 Todas as configurações da api estão dentro de `/src`.
 
@@ -46,7 +46,7 @@ Ela  será a sua rota padrão que retorna todos os municípios brasileiros, supo
 
 OBS: Você deve usar a sigla em maiusculo do estado!
 
-### uf:
+### region:
 `GET localhost:3000/api/city?name=Fortaleza`
 - Retorna a cidade com o determinado nome, se existir!
 
